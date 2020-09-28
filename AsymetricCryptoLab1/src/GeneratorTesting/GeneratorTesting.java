@@ -18,7 +18,7 @@ public class GeneratorTesting {
         return trustsLevel;
     }
 
-    private final HashMap<Integer,Double> trustsLevel;//
+    private final HashMap<Integer,Double> trustsLevel;
     private int howManyBytesToGenerate;
 
     public GeneratorTesting(int howManyBytesToGenerate){
@@ -32,50 +32,36 @@ public class GeneratorTesting {
         trustsLevel.put(1,levelOfTrust0_05);
         trustsLevel.put(2,levelOfTrust0_01);
     }
-    //result[<number of test with appropriate quantile>][<test result>]
-    public boolean[][] test(Generator g){
-        boolean result[][]=new boolean[3][3];
-        System.out.println("*********"+g.getClass().getName().replaceAll(".*\\.","")+" testing*********");
-        var r=testGenerator(g,howManyBytesToGenerate,quantile0_1);
-        for(int i=0;i<3;i++){
-            result[0][i]=r[i];
-        }
-        r=testGenerator(g,howManyBytesToGenerate,quantile0_05);
-        for(int i=0;i<3;i++){
-            result[1][i]=r[i];
-        }
-        r=testGenerator(g,howManyBytesToGenerate,quantile0_01);
-        for(int i=0;i<3;i++){
-            result[2][i]=r[i];
-        }
-        return result;
+
+    public void test(Generator g){
+
+        System.out.printf("%19s|","Generator name");
+        System.out.printf("%22s|","Test type");
+        System.out.printf("%10s|","Trust level");
+        System.out.printf("%11s|","X^2");
+        System.out.printf("%10s|","X^2 theory");
+        System.out.printf("%6s|\n","result");
+        testGenerator(g,howManyBytesToGenerate,quantile0_1);
+        testGenerator(g,howManyBytesToGenerate,quantile0_05);
+        testGenerator(g,howManyBytesToGenerate,quantile0_01);
+
     }
 
-    public boolean[] testGenerator(Generator g, int howManyBytesToGenerate,double quantile){
+    public void testGenerator(Generator g, int howManyBytesToGenerate,double quantile){
         var bytes=g.generateBytes(howManyBytesToGenerate);
-        System.out.println("Generated "+howManyBytesToGenerate +" bytes.");
-        System.out.println("First 50 bytes:");
-        int first50Bytes=50;
-        if(first50Bytes>howManyBytesToGenerate){
-            first50Bytes=howManyBytesToGenerate;
-        }
-        for (int i = 0; i < first50Bytes; i++) {
-            if((i+1)%10==0){
-                System.out.println(bytes[i]+" ");
-            }else {
-                System.out.print(bytes[i]+" ");
-            }
-        }
-        boolean result[]=new boolean[3];
-        System.out.println("---Equiprobability test---");
-        result[0]=testEquiprobability(bytes,quantile);
-        System.out.println("---Independence test---");
-        result[1]=testIndependence(bytes,quantile);
-        System.out.println("---Uniformity test---");
+        String generatorName=g.getClass().getName().replaceAll(".*\\.","");
+        System.out.printf("%19s|",generatorName);
+        System.out.printf("%22s|","Equiprobability test");
+        testEquiprobability(bytes,quantile);
+        System.out.printf("%19s|",generatorName);
+        System.out.printf("%22s|","Independence test");
+        testIndependence(bytes,quantile);
+        System.out.printf("%19s|",generatorName);
+        System.out.printf("%22s|","Uniformity test");
         int r=1<<5;
-        result[2]=testUniformity(bytes,quantile,r);
-        System.out.println("~~~end test~~~\n");
-        return result;
+        testUniformity(bytes,quantile,r);
+
+
     }
 
     public boolean testEquiprobability(byte[] bytes,double quantile){
@@ -114,19 +100,18 @@ public class GeneratorTesting {
             }
 
         }
-
-        System.out.println("Level Of Trust = "+ quantileToLevelOfTrust.get(quantile));
-        System.out.println("X^2 = "+X_2);
         double l=255.0;
         double X_2_alpha=Math.sqrt(2.0*l)*quantile+l;
-        System.out.println("X_2_alpha = "+X_2_alpha);
+        System.out.printf("%11s|",quantileToLevelOfTrust.get(quantile).toString().replaceAll("\\.",","));
+        System.out.printf("%11g|",X_2);
+        System.out.printf("%10g|",X_2_alpha);
         if(X_2<=X_2_alpha){
-            System.out.println("H_0 is true.The equiprobability test passed.");
-            System.out.println();
+            System.out.printf("%6s|\n","true");
+            System.out.println("-------------------------------------------------------------------------------------");
             return true;
         }else {
-            System.out.println("H_0 is false.The equiprobability test failed.");
-            System.out.println();
+            System.out.printf("%6s|\n","false");
+            System.out.println("-------------------------------------------------------------------------------------");
             return false;
         }
 
@@ -174,16 +159,16 @@ public class GeneratorTesting {
         double l=255.0*255.0;
         double X_2_alpha=Math.sqrt(2.0*l)*quantile+l;
 
-        System.out.println("Level Of Trust = "+ quantileToLevelOfTrust.get(quantile));
-        System.out.println("X^2 = "+X_2);
-        System.out.println("X_2_alpha = "+X_2_alpha);
+        System.out.printf( "%11s|",quantileToLevelOfTrust.get(quantile).toString().replaceAll("\\.",","));
+        System.out.printf("%11g|",X_2);
+        System.out.printf("%10g|",X_2_alpha);
         if(X_2<=X_2_alpha){
-            System.out.println("H_0 is true.The independence test passed.");
-            System.out.println();
+            System.out.printf("%6s|\n","true");
+            System.out.println("-------------------------------------------------------------------------------------");
             return true;
         }else {
-            System.out.println("H_0 is false.The independence test failed.");
-            System.out.println();
+            System.out.printf("%6s|\n","false");
+            System.out.println("-------------------------------------------------------------------------------------");
             return false;
         }
     }
@@ -233,16 +218,16 @@ public class GeneratorTesting {
         X_2*=n;
         double l=255*(r-1);
         double X_2_alpha=Math.sqrt(2.0*l)*quantile+l;
-        System.out.println("Level Of Trust = "+ quantileToLevelOfTrust.get(quantile));
-        System.out.println("X^2 = "+X_2);
-        System.out.println("X_2_alpha = "+X_2_alpha);
+        System.out.printf( "%11s|",quantileToLevelOfTrust.get(quantile).toString().replaceAll("\\.",","));
+        System.out.printf("%11g|",X_2);
+        System.out.printf("%10g|",X_2_alpha);
         if(X_2<=X_2_alpha){
-            System.out.println("H_0 is true.The uniformity test passed.");
-            System.out.println();
+            System.out.printf("%6s|\n","true");
+            System.out.println("-------------------------------------------------------------------------------------");
             return true;
         }else {
-            System.out.println("H_0 is false.The uniformity test failed.");
-            System.out.println();
+            System.out.printf("%6s|\n","false");
+            System.out.println("-------------------------------------------------------------------------------------");
             return false;
         }
 
