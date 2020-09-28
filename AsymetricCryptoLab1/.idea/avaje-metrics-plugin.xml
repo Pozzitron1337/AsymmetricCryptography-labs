@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="avajeMetricsPlugin8">
+    <option name="enabled" value="true" />
+    <option name="agentPath" value="$APPLICATION_PLUGINS_DIR$/avaje-metrics-plugin/lib/metrics-agent-8.4.jar" />
+  </component>
+</project>

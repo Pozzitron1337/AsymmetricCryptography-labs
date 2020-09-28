@@ -39,7 +39,6 @@ public class LibrarianGenerator implements Generator {
         this.filePath=filePath;
     }
 
-    //TODO skip low part (done)
     public byte[] generateBytes(int howManyBytesToGenerate) {
         byte output[]=new byte[howManyBytesToGenerate];
         String text="";
