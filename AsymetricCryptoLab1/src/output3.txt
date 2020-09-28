@@ -1,0 +1,987 @@
+/home/ippolit/.jdks/openjdk-14.0.2/bin/java -javaagent:/app/idea-IC/lib/idea_rt.jar=42475:/app/idea-IC/bin -Dfile.encoding=UTF-8 -classpath /home/ippolit/JavaProjects/AsymetricCryptoLab1/out/production/AsymetricCryptoLab1 Main > output.txt
+*********ImbeddedGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+76 -60 -74 97 -32 66 8 54 -60 80
+-46 -87 49 52 -3 1 9 -11 33 -115
+51 90 107 -72 -47 -107 -14 -65 101 -104
+-105 -30 11 -68 35 -48 -44 41 127 81
+20 38 -68 -105 85 47 -88 -107 -78 53
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 229.9296875
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 65243.27603077129
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 8000.91735292261
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-119 -98 80 -4 -39 -4 -40 89 -55 53
+83 -48 82 53 61 -85 22 22 -46 -58
+-68 26 23 68 38 -90 90 -45 -106 -22
+-18 104 -24 -64 85 -70 -19 -55 -27 26
+-71 -58 80 -47 -106 -45 96 -48 95 -117
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 253.81640625
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 65344.01453057869
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7977.337160305935
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-58 120 -2 -96 -46 -74 45 -64 -50 26
+8 -31 115 54 -95 -60 35 55 -42 23
+69 -37 -122 54 123 -74 54 -64 -57 60
+-86 -67 -59 -59 27 93 6 106 80 115
+94 103 -103 -121 -41 119 -67 -37 12 -31
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 240.58984375
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 65340.52689125991
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7823.040757489041
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********LehmerLowGenerator testing*********
+Generated 500000 bytes.
+First 50 bytes:
+120 -17 102 -35 84 -53 66 -71 48 -89
+30 -107 12 -125 -6 113 -24 95 -42 77
+-60 59 -78 41 -96 23 -114 5 124 -13
+106 -31 88 -49 70 -67 52 -85 34 -103
+16 -121 -2 117 -20 99 -38 81 -56 63
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 0.016385048643113173
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 3.175E7
+X_2_alpha = 65487.158839407006
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 4.538155413902345
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 500000 bytes.
+First 50 bytes:
+88 -49 70 -67 52 -85 34 -103 16 -121
+-2 117 -20 99 -38 81 -56 63 -74 45
+-92 27 -110 9 -128 -9 110 -27 92 -45
+74 -63 56 -81 38 -99 20 -117 2 121
+-16 103 -34 85 -52 67 -70 49 -88 31
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 0.016385048643113173
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 3.175E7
+X_2_alpha = 65618.1744483926
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 4.538155413902345
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 500000 bytes.
+First 50 bytes:
+56 -81 38 -99 20 -117 2 121 -16 103
+-34 85 -52 67 -70 49 -88 31 -106 13
+-124 -5 114 -23 96 -41 78 -59 60 -77
+42 -95 24 -113 6 125 -12 107 -30 89
+-48 71 -66 53 -84 35 -102 17 -120 -1
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 0.016385048643113173
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 3.175E7
+X_2_alpha = 65863.9379421232
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 4.538155413902345
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********LehmerHighGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+0 0 1 2 4 6 9 13 16 20
+25 30 36 42 48 55 63 71 79 88
+97 107 117 -128 -117 -105 -93 -81 -68 -54
+-40 -26 -11 4 20 36 53 70 88 106
+125 -112 -93 -73 -52 -31 -10 12 34 57
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 38.5625
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 63859.81700568739
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 7561.562055045972
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+1 2 3 4 6 8 11 14 18 22
+27 32 38 44 50 57 65 73 81 90
+99 109 119 -126 -115 -103 -91 -79 -66 -52
+-38 -24 -9 6 22 38 55 72 90 108
+127 -110 -91 -71 -50 -29 -8 14 36 59
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 40.8515625
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 63937.01363475004
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7567.94020054274
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+3 4 5 6 8 10 13 16 20 24
+29 34 40 46 52 59 67 74 83 92
+101 111 121 -124 -113 -102 -90 -77 -64 -50
+-37 -22 -7 8 24 40 57 74 92 110
+-127 -108 -89 -69 -48 -27 -6 16 38 61
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 39.41796875
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 63602.465093306004
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7553.135536196583
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********L20Generator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+-128 0 9 99 -43 120 74 108 91 52
+114 82 -82 -33 85 69 -63 -119 -22 -26
+30 -123 -71 -62 -13 30 -124 -52 97 93
+37 14 -3 104 24 25 107 13 -58 -80
+4 -43 108 24 -113 29 68 -23 -44 -110
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 185.626953125
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 56923.85450604983
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 7853.076455213653
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+0 0 37 -113 85 -31 41 -79 108 -47
+-55 74 -69 125 85 23 6 39 -85 -104
+122 22 -25 11 -52 122 19 49 -123 116
+-108 59 -11 -96 96 101 -84 55 26 -64
+19 85 -80 98 60 117 19 -89 82 72
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 201.177734375
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 56685.879239993286
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7920.223404788936
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+0 0 -106 61 87 -124 -90 -59 -77 71
+37 42 -19 -11 84 92 24 -98 -82 97
+-24 91 -100 47 49 -24 76 -58 21 -46
+80 -17 -42 -127 -127 -106 -80 -36 107 0
+77 86 -63 -120 -15 -44 78 -99 73 32
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 175.98828125
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 56143.023411976115
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7804.854355380929
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********L89Generator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+-128 0 0 0 0 0 0 0 0 0
+0 64 0 0 0 1 0 0 0 0
+4 0 32 0 0 16 0 0 0 0
+64 2 0 16 1 0 0 0 64 4
+0 32 0 0 24 0 0 0 0 64
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 812.841796875
+X_2_alpha = 283.9415091576389
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 66379.31519868647
+X_2_alpha = 65487.158839407006
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 11835.143126393086
+X_2_alpha = 8066.139503294421
+H_0 is false.The uniformity test failed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+77 -110 -74 14 37 99 4 -106 -78 11
+-66 -76 -109 -109 41 -24 99 -52 7 -2
+-92 80 106 86 51 5 -75 -104 -66 -49
+-23 -124 74 -50 20 -65 -109 -15 -12 13
+-103 -69 5 -11 81 108 -77 -34 45 -65
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 281.41796875
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 64836.584379899956
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7859.278155458742
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+49 -30 -126 29 -101 108 17 -83 12 115
+41 94 69 112 -62 104 -49 29 21 -113
+-102 -88 -37 116 -122 11 -105 10 92 -110
+-23 -111 125 31 -15 -27 64 63 -6 -23
+-36 116 55 85 40 -119 34 125 75 95
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 231.369140625
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 64926.322634550655
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7975.545179360313
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********GeffeGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+-128 82 -118 37 10 -128 1 -128 -27 111
+-62 -70 21 -120 -91 -25 0 -11 -86 -33
+103 38 -62 121 3 4 46 -63 59 118
+99 52 93 89 60 61 97 29 -68 67
+8 102 -113 43 12 14 -72 6 86 -15
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 267.705078125
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 79932.26512252793
+X_2_alpha = 65487.158839407006
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 7725.384784771653
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+98 15 -60 32 70 95 -44 119 -115 -30
+58 29 -78 -26 -1 36 40 -78 -30 -97
+23 111 -87 -74 88 55 -55 90 70 111
+-12 126 81 -126 26 119 21 -88 112 -116
+-18 -83 65 -115 68 -44 61 -116 -46 -39
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 242.26953125
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 80387.56121824807
+X_2_alpha = 65618.1744483926
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7765.121708569641
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-52 -31 38 76 5 -62 57 -59 -54 -102
+55 -112 36 -111 0 -77 -126 -17 -36 117
+-31 93 -105 6 30 -119 93 -26 103 -44
+112 88 -90 -110 51 88 -4 58 -54 94
+23 -39 -50 4 -49 61 -27 -104 120 -29
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 240.859375
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 80452.73433169254
+X_2_alpha = 65863.9379421232
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7778.545118514856
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********LibrarianGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+4 51 4 62 4 65 4 63 4 62
+4 52 4 65 4 66 4 50 4 67
+4 53 4 66 4 62 4 66 4 50
+4 64 4 48 4 73 4 53 4 61
+4 56 4 53 4 56 4 63 4 62
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 1.74743889140625E7
+X_2_alpha = 283.9415091576389
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 202.28600114930305
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 2458.8798712331336
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+4 53 4 61 4 61 4 62 4 50
+4 75 4 64 4 62 4 52 4 56
+4 59 4 62 4 65 4 76 4 50
+4 63 4 62 4 59 4 61 4 67
+4 78 4 48 4 61 4 48 4 64
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 1.7473592443359375E7
+X_2_alpha = 292.1460248434483
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 198.72888080470148
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 2547.075736165454
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+4 61 4 65 4 70 4 53 4 61
+4 52 4 53 4 61 4 66 4 48
+4 59 4 76 4 61 4 62 4 57
+4 59 4 62 4 51 4 56 4 58
+4 53 4 52 4 53 4 59 4 53
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 1.74225036484375E7
+X_2_alpha = 307.53633180705333
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 852.5362167400308
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 5332.02205777372
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********WolframGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+-36 -59 -109 -82 -15 126 -121 -126 -113 -22
+124 -42 -24 -87 75 54 -112 -80 -51 -79
+125 -8 -49 -122 91 67 -25 89 109 -128
+-80 53 -120 60 34 94 -99 -53 126 41
+-93 19 -112 19 -11 79 52 23 27 -115
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 659.447265625
+X_2_alpha = 283.9415091576389
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 164732.38488143298
+X_2_alpha = 65487.158839407006
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 7637.310964505305
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-110 64 116 41 -126 25 15 -99 58 -1
+-23 -98 -87 30 57 -127 -53 -21 90 -104
+-105 -84 15 -33 57 105 -99 -56 -122 57
+41 9 -63 -114 -100 -62 35 90 -8 40
+118 51 24 -82 20 32 121 63 71 -38
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 654.17578125
+X_2_alpha = 292.1460248434483
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 168355.33020101034
+X_2_alpha = 65618.1744483926
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7601.858536143904
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-126 43 -101 21 -30 104 -70 -64 -16 44
+0 48 0 -95 -22 2 -85 -90 -123 97
+24 -86 12 -63 43 -48 -58 72 33 50
+107 -96 91 77 -28 38 -105 107 106 81
+5 5 114 -118 34 -98 61 73 -91 -63
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 677.62890625
+X_2_alpha = 307.53633180705333
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 168168.53795449447
+X_2_alpha = 65863.9379421232
+H_0 is false.The independence test failed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7507.309071442054
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********BMBitsGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+-40 85 126 -29 41 -83 40 -89 14 9
+-23 105 -1 -108 102 51 -95 19 -98 11
+-16 95 -115 75 -38 62 -27 52 126 7
+64 73 -37 114 -25 35 -42 45 -26 -112
+-127 16 -44 105 -115 -55 -110 118 62 -61
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 268.35546875
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 64859.98858019707
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 8008.760883837822
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+100 30 -29 -102 25 85 -5 82 -67 39
+102 14 -31 27 -70 -93 -82 -3 -103 8
+-124 65 78 91 -107 92 113 49 -105 -42
+-48 -55 23 121 0 -65 6 33 17 56
+34 -83 83 -84 60 -118 -113 -65 48 5
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 269.1171875
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 64778.9369596403
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7926.0085039041005
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+3 -123 11 -96 72 52 -121 49 -108 -38
+-61 -105 36 0 72 46 -14 126 79 95
+109 -32 -98 36 112 125 -23 -5 0 -65
+84 46 -26 39 47 80 -6 -97 5 102
+-93 90 -99 106 6 41 63 -95 58 127
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 250.4765625
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 64631.94826453194
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7900.471312670386
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********BMBytesGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+0 113 -73 75 108 -67 -78 -22 -36 88
+-87 15 -42 30 -44 93 -108 42 15 35
+59 21 105 -21 47 50 58 -27 -56 -36
+41 77 -112 -73 61 -1 21 -64 -117 43
+43 -67 72 -1 101 14 -105 43 -76 -36
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 231.39453125
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 64825.33583310543
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 7971.906322459108
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+125 47 -119 -8 19 -50 -31 -39 24 -90
+90 98 -26 -53 5 -128 105 -127 -120 -102
+30 101 -61 -97 53 37 -76 -77 125 60
+61 117 92 -23 -24 -94 56 -125 56 -18
+47 -53 60 -53 -29 102 108 20 4 -89
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 298.828125
+X_2_alpha = 292.1460248434483
+H_0 is false.The equiprobability test failed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 65282.58881411783
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7875.679743226734
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+62 16 -100 -30 66 101 105 -119 -22 -42
+70 -103 -68 38 85 -92 61 63 -5 -6
+29 -17 39 -126 -91 -52 -123 -94 -42 55
+32 85 -115 53 71 -39 113 -117 36 -6
+11 -124 115 -101 -75 -126 -2 111 103 -38
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 273.18359375
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 65207.66469689636
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7818.393917763606
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********BBSBitsGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+0 -53 -24 116 0 112 -80 35 -36 -86
+-10 -29 120 -102 -63 41 24 56 47 -99
+64 69 -35 17 67 86 44 66 36 102
+18 -68 -47 -125 2 44 41 120 96 -8
+5 -46 27 111 -93 -1 51 -12 114 -93
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 251.173828125
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 64923.8994514411
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 7838.114461825695
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-61 113 -41 34 -31 23 49 -113 -87 -28
+-18 117 -94 77 80 34 -81 -85 17 19
+22 -32 84 61 43 -20 -70 -99 0 -25
+59 -11 84 -103 122 76 -76 15 -12 63
+71 -111 -102 101 -120 -37 -38 87 114 -71
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 248.22265625
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 65081.63233807878
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 8041.569060436974
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-36 -52 89 65 116 -20 -108 63 14 -6
+-83 -77 -57 8 115 -108 -110 115 54 -78
+38 5 37 -21 30 46 -83 -38 126 76
+-126 31 -103 0 30 36 -99 -11 32 44
+-68 30 68 84 37 50 -10 34 -66 124
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 249.4140625
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 65118.314813407895
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7733.635412390868
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+*********BBSBytesGenerator testing*********
+Generated 262144 bytes.
+First 50 bytes:
+4 16 0 0 0 0 0 0 37 -125
+80 80 123 52 -5 31 121 -77 -65 118
+27 -108 -30 14 28 -85 87 -79 -88 59
+-52 -26 -86 14 -116 126 -74 122 6 -2
+72 11 1 -53 26 -44 2 -48 111 -8
+---Equiprobability test---
+Quantile = 1.281551566
+X^2 = 235.685546875
+X_2_alpha = 283.9415091576389
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.281551566
+X^2 = 65458.483209353784
+X_2_alpha = 65487.158839407006
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.281551566
+X^2 = 7876.228259683761
+X_2_alpha = 8066.139503294421
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+-73 125 64 58 -120 80 -121 -36 -43 18
+64 110 28 57 -122 125 95 -37 52 -72
+31 41 -105 -33 21 -28 -19 -2 -41 -8
+6 55 -88 -46 83 -13 -123 107 -9 -106
+-107 80 112 -41 0 -28 14 -62 -20 2
+---Equiprobability test---
+Quantile = 1.644853627
+X^2 = 209.17578125
+X_2_alpha = 292.1460248434483
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 1.644853627
+X^2 = 65063.23830290386
+X_2_alpha = 65618.1744483926
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 1.644853627
+X^2 = 7844.988564475789
+X_2_alpha = 8111.82031334415
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+Generated 262144 bytes.
+First 50 bytes:
+101 69 33 -109 -100 52 80 15 9 -23
+32 -6 86 -16 78 -68 -81 9 83 -73
+105 63 -14 -38 -38 88 30 81 -78 -111
+65 66 11 -107 101 -73 -21 -68 -96 59
+32 -72 -99 -36 -12 -94 -97 -26 -15 76
+---Equiprobability test---
+Quantile = 2.326347874
+X^2 = 234.4921875
+X_2_alpha = 307.53633180705333
+H_0 is true.The equiprobability test passed.
+
+---Independence test---
+Quantile = 2.326347874
+X^2 = 65600.42376516652
+X_2_alpha = 65863.9379421232
+H_0 is true.The independence test passed.
+
+---Uniformity test---
+Quantile = 2.326347874
+X^2 = 7847.215626011603
+X_2_alpha = 8197.509915989125
+H_0 is true.The uniformity test passed.
+
+~~~end test~~~
+
+
+Process finished with exit code 0
