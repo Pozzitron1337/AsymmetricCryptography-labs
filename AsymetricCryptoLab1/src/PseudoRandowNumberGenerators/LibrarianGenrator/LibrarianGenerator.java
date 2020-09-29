@@ -43,13 +43,10 @@ public class LibrarianGenerator implements Generator {
         byte output[]=new byte[howManyBytesToGenerate];
         String text="";
         Random r=new Random();
-        int skipedSymbols=Math.abs(r.nextInt())%9999;
+
         try(FileReader reader = new FileReader(filePath))
         {
             int c;
-            while ((skipedSymbols--)>-1){
-                reader.read();
-            }
             int i=0;
             while((c=reader.read())!=-1&&i<howManyBytesToGenerate){
                 //output[i]=(byte)(c>>>8);

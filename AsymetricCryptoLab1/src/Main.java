@@ -39,10 +39,10 @@ public class Main {
         System.out.println("Random seed: "+seed);
         for(int k=0;k<g.length;k++){
             switch (k){
-                case 1: {
+                /*case 1: {
                     generatorTesting2.test(g[k]);
                     break;
-                }
+                }*/
                 default:{
                     generatorTesting1.test(g[k]);
                 }

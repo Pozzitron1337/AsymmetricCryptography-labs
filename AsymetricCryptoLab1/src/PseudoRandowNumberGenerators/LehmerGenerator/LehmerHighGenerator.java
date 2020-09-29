@@ -10,6 +10,7 @@ public class LehmerHighGenerator extends LehmerGenerator {
         byte[] output=new byte[howManyBytesToGenerate];
         for(int i=0;i<howManyBytesToGenerate;i++){
             state=(a*state+c)%m;
+
             output[i]=(byte)((state>>>24));
         }
         return output;

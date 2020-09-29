@@ -58,7 +58,7 @@ public class GeneratorTesting {
         testIndependence(bytes,quantile);
         System.out.printf("%19s|",generatorName);
         System.out.printf("%22s|","Uniformity test");
-        int r=1<<5;
+        int r=1<<8;
         testUniformity(bytes,quantile,r);
 
 
@@ -122,8 +122,11 @@ public class GeneratorTesting {
 
         long v[][]=new long[256][256];//pairs (i,j)
         int n=bytes.length/2;
-        for (int i = 1; i < bytes.length/2; i++) {
+        /*for (int i = 1; i < bytes.length/2; i++) {
             v[Byte.toUnsignedInt(bytes[2*i-1])][Byte.toUnsignedInt(bytes[2*i])]++;
+        }*/
+        for (int i = 0; i < bytes.length-1; i+=2) {
+            v[Byte.toUnsignedInt(bytes[i])][Byte.toUnsignedInt(bytes[i+1])]++;
         }
         long x[]=new long[256];//contains i
         for(int i=0;i<256;i++){
