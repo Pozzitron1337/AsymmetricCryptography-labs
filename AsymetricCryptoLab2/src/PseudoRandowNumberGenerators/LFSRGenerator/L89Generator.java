@@ -34,21 +34,9 @@ public class L89Generator extends LFSR {
     public byte[] generateBytes(int howManyBytesToGenerate){
         byte[] output=new byte[howManyBytesToGenerate];
         long feedback;
-        /*System.out.print(
-                        String.format("%25s",
-                        Long.toBinaryString(state[1])).replaceAll(" ", "0"));
-        System.out.println(
-                String.format("%64s",
-                        Long.toBinaryString(polynom)).replaceAll(" ", "0"));*/
-
         for(int i=0;i<howManyBytesToGenerate;i++){
             for (int j=Byte.SIZE-1;j>-1;j--){
                 output[i]|=(state[0]&(long)0b1)<<j;
-                /*System.out.print(String.format("%25s",
-                                Long.toBinaryString(state[1])).replaceAll(" ", "0"));
-                System.out.println("|"+ String.format("%64s",
-                                Long.toBinaryString(state[0])).replaceAll(" ", "0"));
-                */
                 feedback=state[0]&polynom;
                 state[0]>>>=1;
                 state[0]|=(state[1]&(long)0b1)<<63;

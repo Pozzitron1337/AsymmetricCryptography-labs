@@ -1,12 +1,12 @@
-package PseudoRandowNumberGenerators.ImbeddedGenerator;
+package PseudoRandowNumberGenerators.EmbeddedGenerator;
 
 import PseudoRandowNumberGenerators.Generator;
 import java.util.Random;
-public class ImbeddedGenerator implements Generator {
+public class EmbeddedGenerator implements Generator {
 
     private Random random;
 
-    public ImbeddedGenerator(){
+    public EmbeddedGenerator(){
         random=new Random();
     }
 
