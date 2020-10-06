@@ -5,6 +5,8 @@ import PrimeTest.PrimeTest;
 import PseudoRandowNumberGenerators.Generator;
 import PseudoRandowNumberGenerators.EmbeddedGenerator.EmbeddedGenerator;
 
+import java.math.BigInteger;
+
 public class PrimeNumber {
 
     PrimeTest primeTest;
@@ -40,4 +42,14 @@ public class PrimeNumber {
         return number;
     }
 
+    public BigInteger generatePrimeBigInteger(int bitLength){
+        return new BigInteger(1,generatePrime(bitLength));
+    }
+
+    public BigInteger[] generatePair(int bitLength){
+        BigInteger pair[]=new BigInteger[2];
+        pair[0]=generatePrimeBigInteger(bitLength);
+        pair[1]=generatePrimeBigInteger(bitLength);
+        return pair;
+    }
 }
