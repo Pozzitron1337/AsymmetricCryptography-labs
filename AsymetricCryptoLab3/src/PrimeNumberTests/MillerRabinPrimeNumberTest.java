@@ -1,15 +1,15 @@
-package PrimeTest;
+package PrimeNumberTests;
 
-import PseudoRandowNumberGenerators.Generator;
 import PseudoRandowNumberGenerators.EmbeddedGenerator.EmbeddedGenerator;
+import PseudoRandowNumberGenerators.Generator;
 
 import java.math.BigInteger;
 
-public class MillerRabinPrimeTest implements PrimeTest {
+public class MillerRabinPrimeNumberTest implements PrimeNumberTest {
 
     private int rounds;
     private Generator g;
-    public MillerRabinPrimeTest(int rounds){
+    public MillerRabinPrimeNumberTest(int rounds){
         this.rounds=rounds;
         g=new EmbeddedGenerator();
     }

@@ -1,16 +1,15 @@
 package PrimeNumber;
 
-import PrimeNumberTests.MillerRabinPrimeNumberTest;
-import PrimeNumberTests.PrimeNumberTest;
-import PseudoRandowNumberGenerators.Generator;
+import PrimeNumberTests.*;
 import PseudoRandowNumberGenerators.EmbeddedGenerator.EmbeddedGenerator;
+import PseudoRandowNumberGenerators.Generator;
 
 import java.math.BigInteger;
 
 public class PrimeNumber {
 
-    PrimeNumberTest primeTest;
-    Generator generator;
+    private PrimeNumberTest primeTest;
+    private Generator generator;
     public PrimeNumber(){
         this.primeTest=new MillerRabinPrimeNumberTest(30);
         this.generator=new EmbeddedGenerator();
@@ -52,4 +51,17 @@ public class PrimeNumber {
         pair[1]=generatePrimeBigInteger(bitLength);
         return pair;
     }
+
+    public BigInteger generatePrime4kplus1(int bitLength){
+        BigInteger prime4kplus1;
+        do{
+            prime4kplus1=generatePrimeBigInteger(bitLength);
+        }
+        while(prime4kplus1
+                .subtract(BigInteger.ONE)
+                .mod(BigInteger.valueOf(4))
+                .compareTo(BigInteger.ZERO)!=0);
+        return prime4kplus1;//p=4*k+1
+    }
+
 }

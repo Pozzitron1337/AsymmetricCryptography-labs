@@ -5,33 +5,30 @@ import PrimeNumber.PrimeNumber;
 import java.math.BigInteger;
 
 public class RSA {
-
     private final BigInteger e=new BigInteger("10001",16);
-    private BigInteger d;
+    private BigInteger d;//d*e=1(mod phi(n))
     private BigInteger p;
     private BigInteger q;
     private BigInteger n;
-    private PrimeNumber primeNumber;
-    private int keyLength;
     public RSA(){
-        this.keyLength=128;
-        this.primeNumber=new PrimeNumber();
+        generateKeyPair(128);
     }
-    public RSA(int keyLength){
-        this.primeNumber=new PrimeNumber();
-        this.keyLength=keyLength;
+
+    public RSA(int keyBitLength){
+        generateKeyPair(keyBitLength);
     }
+
     public RSA(BigInteger n){
-        this.primeNumber=new PrimeNumber();
         this.n=n;
     }
-    public void generateKeyPair(){
-        this.p=primeNumber.generatePrimeBigInteger(keyLength);
-        this.q=primeNumber.generatePrimeBigInteger(keyLength);
+
+    private void generateKeyPair(int keyBitLength){
+        PrimeNumber primeNumber=new PrimeNumber();
+        this.p=primeNumber.generatePrimeBigInteger(keyBitLength);
+        this.q=primeNumber.generatePrimeBigInteger(keyBitLength);
         this.n=p.multiply(q);
         BigInteger phi=(p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
         this.d=e.modInverse(phi);
-
     }
 
     public BigInteger[] getPublicKey(){
@@ -56,39 +53,14 @@ public class RSA {
             return C.toByteArray();
         }
     }
-    public static byte[] encrypt(byte[] textBytes,byte[] e_external,byte[] n_external){
-        BigInteger M=new BigInteger(1,textBytes);
-        BigInteger E=new BigInteger(1,e_external);
-        BigInteger N=new BigInteger(1,n_external);
-        if(M.compareTo(N)>-1){
-            System.out.println("Message larger than modulus");
-            return BigInteger.ZERO.toByteArray();
-        }else {
-            BigInteger C = M.modPow(E,N);
-            return C.toByteArray();
-        }
-    }
 
-    public byte[] decrypt(byte[] cipherText){
-        BigInteger C=new BigInteger(1,cipherText);
+    public byte[] decrypt(byte[] cipherTextBytes){
+        BigInteger C=new BigInteger(1,cipherTextBytes);
         if(C.compareTo(n)>-1){
             System.out.println("Cipher text larger than modulus");
             return BigInteger.ZERO.toByteArray();
         }else {
             BigInteger M = C.modPow(d,n);
-            return M.toByteArray();
-        }
-    }
-
-    public static byte[] decrypt(byte[] cipherText,byte[] d_external,byte[] n_external){
-        BigInteger C=new BigInteger(1,cipherText);
-        BigInteger D=new BigInteger(1,d_external);
-        BigInteger N=new BigInteger(1,n_external);
-        if(C.compareTo(N)>-1){
-            System.out.println("Cipher text larger than modulus");
-            return BigInteger.ZERO.toByteArray();
-        }else {
-            BigInteger M = C.modPow(D,N);
             return M.toByteArray();
         }
     }
@@ -112,8 +84,8 @@ public class RSA {
         }
     }
 
-    public BigInteger[] sendKey(byte[] modulus_receiver,byte[] publicExponent_receiver){
-        BigInteger k=new BigInteger("228");
+    public BigInteger[] sendKey(byte[] modulus_receiver,byte[] publicExponent_receiver,byte[] sharedKey){
+        BigInteger k=new BigInteger(1,sharedKey);
         BigInteger n_1=new BigInteger(1,modulus_receiver);
         BigInteger e_1=new BigInteger(1,publicExponent_receiver);
         BigInteger k_1=k.modPow(e_1,n_1);
@@ -127,16 +99,14 @@ public class RSA {
         BigInteger e_sender=new BigInteger(1,publicExponent_sender);
         BigInteger k=k_1.modPow(d,n);
         BigInteger S=S_1.modPow(d,n);
-        BigInteger verify;
+        BigInteger verification;
         if(k.compareTo(S.modPow(e_sender,n_sender))==0){
-            verify=BigInteger.ONE;
+            verification=BigInteger.ONE;
         }
         else {
-            verify=BigInteger.ZERO;
+            verification=BigInteger.ZERO;
         }
-        return new BigInteger[]{k,verify};
-
-
+        return new BigInteger[]{k,verification};
     }
 
 }
