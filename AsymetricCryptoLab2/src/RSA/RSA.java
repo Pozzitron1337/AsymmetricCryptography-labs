@@ -1,6 +1,6 @@
 package RSA;
 
-import PrimeNumber.PrimeNumber;
+import PrimeNumberService.PrimeNumberGenerator;
 
 import java.math.BigInteger;
 
@@ -23,9 +23,9 @@ public class RSA {
     }
 
     private void generateKeyPair(int keyBitLength){
-        PrimeNumber primeNumber=new PrimeNumber();
-        this.p=primeNumber.generatePrimeBigInteger(keyBitLength);
-        this.q=primeNumber.generatePrimeBigInteger(keyBitLength);
+        PrimeNumberGenerator primeNumberGenerator=new PrimeNumberGenerator();
+        this.p=primeNumberGenerator.generatePrimeBigInteger(keyBitLength);
+        this.q=primeNumberGenerator.generatePrimeBigInteger(keyBitLength);
         this.n=p.multiply(q);
         BigInteger phi=(p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
         this.d=e.modInverse(phi);
