@@ -2,15 +2,15 @@ package PrimeNumberService;
 
 import java.math.BigInteger;
 
+import PrimeNumberService.PseudoRandomNumberGenerators.Generator;
 import PrimeNumberService.PrimeNumberTest.MillerRabinPrimeNumberTest;
 import PrimeNumberService.PrimeNumberTest.PrimeNumberTest;
-import PrimeNumberService.PseudoRandomNumberGenerators.*;
 import PrimeNumberService.PseudoRandomNumberGenerators.EmbeddedGenerator.*;
 
 public class PrimeNumberGenerator {
 
-    PrimeNumberTest primeTest;
-    Generator generator;
+    private PrimeNumberTest primeTest;
+    private Generator generator;
     public PrimeNumberGenerator(){
         this.primeTest=new MillerRabinPrimeNumberTest(30);
         this.generator=new EmbeddedGenerator();
@@ -20,7 +20,7 @@ public class PrimeNumberGenerator {
         this.generator=generator;
     }
 
-    public byte[] generatePrime(int bitLength){
+    public BigInteger generatePrime(int bitLength){
         byte[] number;
         int u=bitLength%8;//to fit the length.
         boolean lengthIsOk;
@@ -38,20 +38,16 @@ public class PrimeNumberGenerator {
                     lengthIsOk=false;
                 }
             }
-            System.out.println("Not prime: "+new BigInteger(1,number).toString(16).toUpperCase());
         }while (!primeTest.isPrime(number)||!lengthIsOk);
-        System.out.println("Prime: "+new BigInteger(1,number).toString(16).toUpperCase());
-        return number;
+        return new BigInteger(1,number);
     }
 
-    public BigInteger generatePrimeBigInteger(int bitLength){
-        return new BigInteger(1,generatePrime(bitLength));
-    }
-
-    public BigInteger[] generatePair(int bitLength){
-        BigInteger pair[]=new BigInteger[2];
-        pair[0]=generatePrimeBigInteger(bitLength);
-        pair[1]=generatePrimeBigInteger(bitLength);
-        return pair;
+    public BigInteger generatePrime4kplus3(int bitLength){
+        //p=4k+3 => k=(p-3)/4 => (p-3) == 0 (mod4)
+        BigInteger prime=generatePrime(bitLength);
+        while(prime.subtract(BigInteger.valueOf(3)).mod(BigInteger.valueOf(4)).compareTo(BigInteger.ZERO)!=0){
+            prime=generatePrime(bitLength);
+        }
+        return prime;
     }
 }

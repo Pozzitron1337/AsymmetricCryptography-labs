@@ -34,7 +34,6 @@ public class Main {
                 RSA sender=new RSA(n);//encrypting
                 byte[] cipherText=sender.encrypt(text.getBytes());
                 BigInteger C = new BigInteger(1,cipherText);
-                System.out.println("CipherText raw: "+new String(C.toByteArray(),StandardCharsets.UTF_8));
                 System.out.println("CipherText big int: "+C.toString(16).toUpperCase());
 
                 URL urlToDecryption=new URL("http://asymcryptwebservice.appspot.com/rsa/decrypt?cipherText="+C.toString(16)+"&expectedType=BYTES");
@@ -108,7 +107,7 @@ public class Main {
         String plainText="test";
         System.out.println("Plain text: "+plainText);
         var cipher=sender.encrypt(plainText.getBytes());
-        System.out.println("Ciphered: "+new String(cipher, StandardCharsets.UTF_8));
+        System.out.println("Ciphered: "+new BigInteger(1,cipher));
         var deciphered=receiver.decrypt(cipher);
         System.out.println("Deciphered: "+new String(deciphered, StandardCharsets.UTF_8));
     }
@@ -129,16 +128,18 @@ public class Main {
                     +"&publicExponent=10001");
             URLConnection connection=verificationURL.openConnection();
             String responce=new String(connection.getInputStream().readAllBytes());
-            System.out.println("Server veryfication: "+responce);
-
+            Pattern regex=Pattern.compile("\"verified\":(true|false)");
+            Matcher matcher=regex.matcher(responce);
+            System.out.println("Server responce: "+responce);
+            if(matcher.find()) {
+                System.out.println("Server veryfication: " + matcher.group(1));
+            }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RSA verifier=new RSA(128);
-        boolean verification=verifier.verify(message.getBytes(),sign,signer.getN(),signer.getE());
-        System.out.println("My verification: "+verification);
+
     }
 
     public static void webService_sign_message_and_i_verify(String message,int keySize){
@@ -182,6 +183,7 @@ public class Main {
     }
 
     public static void send_key_using_webService(int senderKeyLength,int receiverKeySize,byte[] sharedKey){
+
         System.out.println("-----------------------------------");
         System.out.println("send_key_using_webService");
         try {
@@ -200,8 +202,8 @@ public class Main {
                 System.out.println("Receivers e: "+matcher.group(2));
 
                 RSA sender=new RSA(senderKeyLength);
-                System.out.println("sender e: "+sender.getPublicKey()[0]);
-                System.out.println("sender n: "+sender.getPublicKey()[1]);
+                System.out.println("sender e: "+sender.getPublicKey()[0].toString(16));
+                System.out.println("sender n: "+sender.getPublicKey()[1].toString(16));
                 var senderData=sender.sendKey(receiver_n.toByteArray(),receiver_e.toByteArray(),sharedKey);
                 URL urlReceive=new URL("http://asymcryptwebservice.appspot.com/rsa/receiveKey?" +
                         "key="+senderData[0].toString(16).toUpperCase() +
@@ -211,6 +213,13 @@ public class Main {
                 connection=urlReceive.openConnection();
                 responce=new String(connection.getInputStream().readAllBytes());
                 System.out.println(responce);
+                regex=Pattern.compile("\"key\":\"([\\dABCDEF]*)\".*\"verified\":(true|false)");
+                matcher=regex.matcher(responce);
+                if(matcher.find()){
+                    var d = new BigInteger(1,sharedKey);
+                    System.out.println("keys equals: "+(d.toString(16)).equals(matcher.group(1)));
+                    System.out.println("verified: "+"true".equals(matcher.group(2)));
+                }
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -250,7 +259,7 @@ public class Main {
                     BigInteger k_1 = new BigInteger(matcher.group(1), 16);
                     BigInteger s_1 = new BigInteger(matcher.group(2), 16);
                     var receiverData = receiver.receiveKey(k_1, s_1, modulus_sender.toByteArray(),publicExpinent_sender.toByteArray());
-                    System.out.println("Shared key: "+receiverData[0]);
+                    System.out.println("Shared key: "+receiverData[0].toString(16));
                     System.out.println("Verification: "+receiverData[1]);
                 }
             }
@@ -286,7 +295,7 @@ public class Main {
           send_public_key_and_recieve_ciphertext();
           sign_message_and_verify_the_sign_using_webService("teext");
           webService_sign_message_and_i_verify("test",128);
-          send_key_using_webService(128,256,"secret".getBytes());//
+          send_key_using_webService(128,256,"secret".getBytes());
           receive_key_using_webService(128,256);
           send_key_and_receive_key();
 

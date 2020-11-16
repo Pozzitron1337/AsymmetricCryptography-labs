@@ -24,7 +24,9 @@ public class RSA {
 
     private void generateKeyPair(int keyBitLength){
         PrimeNumberGenerator primeNumberGenerator=new PrimeNumberGenerator();
+        System.out.println("p: ");
         this.p=primeNumberGenerator.generatePrimeBigInteger(keyBitLength);
+        System.out.println("q: ");
         this.q=primeNumberGenerator.generatePrimeBigInteger(keyBitLength);
         this.n=p.multiply(q);
         BigInteger phi=(p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
