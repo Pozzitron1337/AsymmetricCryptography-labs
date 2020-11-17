@@ -1,30 +1,26 @@
 package RabinCryptosystem;
 
-import PrimeNumberService.PrimeNumberGenerator;
-import PrimeNumberService.PseudoRandomNumberGenerators.EmbeddedGenerator.EmbeddedGenerator;
-import PrimeNumberService.PseudoRandomNumberGenerators.Generator;
+import NumberService.PrimeNumberService.PrimeNumberGenerator;
+import NumberService.PseudoRandomNumberGenerators.EmbeddedGenerator.EmbeddedGenerator;
+import NumberService.PseudoRandomNumberGenerators.Generator;
 
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 
 import static java.math.BigInteger.ONE;
 
 public class Rabin {
-
-    public BigInteger getN() {
-        return n;
-    }
-
-    BigInteger n;
+    private BigInteger n;
+    private BigInteger b;
+    private BigInteger p;
+    private BigInteger q;
 
     public BigInteger getB() {
         return b;
     }
 
-    BigInteger b;
-    BigInteger p;
-    BigInteger q;
-
+    public BigInteger getN() {
+        return n;
+    }
 
     public Rabin(int keyBitLength){
         generateKey(keyBitLength);
@@ -77,12 +73,15 @@ public class Rabin {
         byte[] openTextBytes=openText.getBytes();
         byte[] result=new byte[n.toByteArray().length-2];
         result[0]=(byte)0xFF;
+        //0xFF|00|00|00|00|35|36|999999
+        int z=result.length-8-openTextBytes.length;
         for(int i=0;i<openTextBytes.length;i++){
-            result[i+1]=openTextBytes[i];
+            result[z+i]=openTextBytes[i];
         }
         for (int i=0;i<randomBytes.length;i++){
             result[result.length-randomBytes.length+i]=randomBytes[i];
         }
+        //System.out.println(new BigInteger(1,result).toString(16).toUpperCase());
         return new BigInteger(1,result);
     }
 
@@ -133,11 +132,9 @@ public class Rabin {
         if (symbloJacobi.equals(ONE)) {
             return ONE;
         }
-
         if (symbloJacobi.equals(BigInteger.valueOf(-1))) {
             return BigInteger.ZERO;
         }
-
         return BigInteger.valueOf(-1);
     }
 //--------------------------------------------------------------------
@@ -217,10 +214,9 @@ public class Rabin {
 
     public boolean verify(String message,BigInteger sign){
         BigInteger x=sign.modPow(BigInteger.TWO,n);
-        System.out.println(x.toString(16).toUpperCase());
+        //System.out.println(x.toString(16).toUpperCase());
         BigInteger message1 = unformatPlainText(x);
         BigInteger message2 = new BigInteger(1,message.getBytes());
         return message1.equals(message2);
     }
-
 }
