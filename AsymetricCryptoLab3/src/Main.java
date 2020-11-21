@@ -117,7 +117,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //TODO attack
         String text="some test text";
         int keySize=2048;
         i_encrypt_and_webService_decrypt(text,keySize);

@@ -54,7 +54,7 @@ public class Rabin {
             BigInteger y=x.multiply(x.add(b)).mod(n);
             BigInteger x_plus_bHalf=x.add(b.multiply(BigInteger.TWO.modInverse(n))).mod(n);
             BigInteger c1=x_plus_bHalf.testBit(0)? ONE:BigInteger.ZERO;
-            BigInteger c2=mapSymbolJacobi(symbolJacobi(x_plus_bHalf,n));
+            BigInteger c2= aiversonSymbol(symbolJacobi(x_plus_bHalf,n));
             return new BigInteger[]{y,c1,c2};
         }
         else{
@@ -74,7 +74,7 @@ public class Rabin {
         byte[] result=new byte[n.toByteArray().length-2];
         result[0]=(byte)0xFF;
         //0xFF|00|00|00|00|35|36|999999
-        int z=result.length-8-openTextBytes.length;
+        int z=result.length-randomBytes.length-openTextBytes.length;
         for(int i=0;i<openTextBytes.length;i++){
             result[z+i]=openTextBytes[i];
         }
@@ -85,7 +85,7 @@ public class Rabin {
         return new BigInteger(1,result);
     }
 
-    private BigInteger symbolJacobi(BigInteger a, BigInteger b) {
+    public BigInteger symbolJacobi(BigInteger a, BigInteger b) {
         //https://ru.wikipedia.org/wiki/Символ_Якоби
         if (a.signum() == 0||!a.gcd(b).equals(ONE)) {
             return BigInteger.ZERO;
@@ -128,7 +128,7 @@ public class Rabin {
         return b.equals(ONE) ? BigInteger.valueOf(r) : BigInteger.ZERO;
     }
 
-    private BigInteger mapSymbolJacobi(BigInteger symbloJacobi){
+    private BigInteger aiversonSymbol(BigInteger symbloJacobi){
         if (symbloJacobi.equals(ONE)) {
             return ONE;
         }
@@ -179,7 +179,7 @@ public class Rabin {
         boolean isParity=parity.equals(ONE);
         BigInteger tempSymbolJacobi;
         for(var root:roots){
-            tempSymbolJacobi = mapSymbolJacobi(symbolJacobi(root,n));
+            tempSymbolJacobi = aiversonSymbol(symbolJacobi(root,n));
             if(root.testBit(0)==isParity&&tempSymbolJacobi.equals(symbolJacobi)){
                 return root;
             }
