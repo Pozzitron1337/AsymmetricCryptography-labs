@@ -45,7 +45,6 @@ public class Rabin {
         }while (this.n.bitLength()!=keyBitLength);
         EmbeddedGenerator randomGenerator=new EmbeddedGenerator();
         this.b=new BigInteger(1,randomGenerator.generateBytes((n.bitLength()/8)*2)).mod(n);
-
     }
 
     private BigInteger formatPlainText(String openText){
